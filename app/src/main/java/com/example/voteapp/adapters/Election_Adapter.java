@@ -83,7 +83,7 @@ public class Election_Adapter extends RecyclerView.Adapter<Election_Adapter.View
             super(itemView);
             textViewHead = itemView.findViewById(R.id.textViewHead);
             textViewDesc = itemView.findViewById(R.id.textViewDesc);
-            imageView = itemView.findViewById(R.id.imageView);
+            imageView = itemView.findViewById(R.id.electionPoster);
             linearLayout = itemView.findViewById(R.id.linearLayout);
         }
     }
