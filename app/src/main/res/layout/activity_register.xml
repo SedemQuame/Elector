@@ -54,15 +54,19 @@
         app:layout_constraintTop_toBottomOf="@+id/editEmail" />
 
     <Button
-        style="@style/ButtonStyle"
         android:id="@+id/btnRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Register"
         app:layout_constraintEnd_toEndOf="@+id/editPassword"
         app:layout_constraintStart_toStartOf="@+id/editPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editPassword"
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="@drawable/custom_button"
+        />
 
     <LinearLayout
         android:id="@+id/linkLogin"

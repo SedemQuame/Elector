@@ -6,184 +6,326 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        app:cardBackgroundColor="#F8F8F3"
-        app:cardCornerRadius="5dp">
+        android:layout_marginBottom="10dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/electionPoster"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:scaleType="fitXY"
+            tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+
+        <TextView
+            android:id="@+id/electionTitleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#33393f"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/electionDescriptionView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#7f8c8d"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="2dp"
+            android:orientation="horizontal"
+            android:weightSum="7">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="Starts:"
+                android:textColor="#33393f"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/startDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="2dp"
+            android:orientation="horizontal"
+            android:weightSum="7">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="Ends:"
+                android:textColor="#33393f"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/endDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:orientation="horizontal"
+            android:weightSum="7">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="Status:"
+                android:textColor="#33393f"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text="Ongoing" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/electionPoster"
-                android:layout_width="match_parent"
-                android:layout_height="260dp"
-                android:scaleType="fitXY"
-                tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
-
             <TextView
-                android:id="@+id/electionTitleView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="7dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Title"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-            <TextView
-                android:id="@+id/electionDescriptionView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:fontFamily="@font/montserrat"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textSize="15sp" />
+                android:text="Candidate List"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#33393f"
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/vote_box"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:elevation="10dp"
+                >
 
                 <TextView
+                    android:id="@+id/candidate1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="7dp"
-                    android:fontFamily="@font/roboto_medium"
-                    android:text="Candidate List"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    android:text="Candidate 1" />
 
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/voteCandidate1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/round_button"
+                        android:src="@drawable/ic_action_name"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate1"
+                        app:layout_constraintStart_toStartOf="parent"></ImageButton>
+
+                    <ProgressBar
+                        android:id="@+id/progressOfCandidate1"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="10"
+                        android:background="@drawable/round_progress_bar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/scoreOfCandidate1"
+                        app:layout_constraintStart_toEndOf="@+id/voteCandidate1"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/candidate1"
-                        android:layout_width="match_parent"
+                        android:id="@+id/scoreOfCandidate1"
+                        android:layout_width="60dp"
                         android:layout_height="wrap_content"
-                        android:text="Candidate 1" />
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="643"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.45" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+            </LinearLayout>
 
-                        <Button
-                            android:id="@+id/voteCandidate1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate1"
-                            app:layout_constraintStart_toStartOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/vote_box"
+                android:orientation="vertical"
+                android:elevation="10dp"
+                android:padding="5dp">
 
-                        <ProgressBar
-                            android:id="@+id/progressOfCandidate1"
-                            style="?android:attr/progressBarStyleHorizontal"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_weight="10"
-                            android:background="#3F51B5"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.0"
-                            app:layout_constraintStart_toEndOf="@+id/voteCandidate1"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/candidate2"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:text="Candidate 2" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageButton
+                        android:id="@+id/voteCandidate2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/round_button"
+                        android:src="@drawable/ic_action_name"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate2"
+                        app:layout_constraintStart_toStartOf="parent"></ImageButton>
+
+                    <ProgressBar
+                        android:id="@+id/progressOfCandidate2"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="10"
+                        android:background="@drawable/round_progress_bar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/scoreOfCandidate2"
+                        app:layout_constraintStart_toEndOf="@+id/voteCandidate2"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/candidate2"
-                        android:layout_width="match_parent"
+                        android:id="@+id/scoreOfCandidate2"
+                        android:layout_width="60dp"
                         android:layout_height="wrap_content"
-                        android:text="Candidate 2" />
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="410"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.49" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+            </LinearLayout>
 
-                        <Button
-                            android:id="@+id/voteCandidate2"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate2"
-                            app:layout_constraintStart_toStartOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/vote_box"
+                android:elevation="10dp"
+                android:orientation="vertical"
 
-                        <ProgressBar
-                            android:id="@+id/progressOfCandidate2"
-                            style="?android:attr/progressBarStyleHorizontal"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_weight="10"
-                            android:background="#3F51B5"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.0"
-                            app:layout_constraintStart_toEndOf="@+id/voteCandidate2"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                android:padding="5dp">
 
-                </LinearLayout>
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/candidate3"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:text="Candidate 2" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageButton
+                        android:id="@+id/voteCandidate3"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/round_button"
+                        android:src="@drawable/ic_action_name"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate3"
+                        app:layout_constraintStart_toStartOf="parent"></ImageButton>
+
+                    <ProgressBar
+                        android:id="@+id/progressOfCandidate3"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="10"
+                        android:background="@drawable/round_progress_bar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/scoreOfCandidate3"
+                        app:layout_constraintStart_toEndOf="@+id/voteCandidate3"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/candidate3"
-                        android:layout_width="match_parent"
+                        android:id="@+id/scoreOfCandidate3"
+                        android:layout_width="60dp"
                         android:layout_height="wrap_content"
-                        android:text="Candidate 2" />
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <Button
-                            android:id="@+id/voteCandidate3"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate3"
-                            app:layout_constraintStart_toStartOf="parent" />
-
-                        <ProgressBar
-                            android:id="@+id/progressOfCandidate3"
-                            style="?android:attr/progressBarStyleHorizontal"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_weight="10"
-                            android:background="#3F51B5"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.0"
-                            app:layout_constraintStart_toEndOf="@+id/voteCandidate3"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="723"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.42000002" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 </ScrollView>

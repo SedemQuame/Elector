@@ -55,11 +55,15 @@ public class Election_Adapter extends RecyclerView.Adapter<Election_Adapter.View
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Vote intent for: " + election.getElectionName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Vote intent for: " + election.getElectionId(), Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(context, SingleElection.class);
                 i.putExtra("title", election.getElectionName());
                 i.putExtra("description", election.getElectionDescription());
                 i.putExtra("imageUrl", election.getImageUrl());
+                i.putExtra("_id", election.getElectionId());
+                i.putExtra("start_time", election.getElectionStartDate());
+                i.putExtra("end_time", election.getElectionEndDate());
+                i.putExtra("candidates", election.getElectionCandidates());
                 i.setFlags(FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
             }

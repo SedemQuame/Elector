@@ -68,21 +68,24 @@ public class ElectionList extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
                             JSONArray array = jsonObject.getJSONArray("results");
 
-//                            Log.d(TAG, "onResponse: " + jsonObject);
-//                            Log.d(TAG, "onResponse: "+ array);
-
-
                             for (int i = 0; i < array.length(); i++) {
                                 JSONObject o = array.getJSONObject(i);
 
-                                Log.d(TAG, "Object: " + o.getString("name"));
+                                Log.d(TAG, "Object: " + o.getString("_id"));
 
                                 Election item = new Election(
                                         o.getString("name").trim(),
                                         o.getString("description").trim(),
-                                        o.getString("image_url").trim()
+                                        o.getString("image_url").trim(),
+                                        o.getString("_id").trim(),
+                                        o.getString("start_time").trim(),
+                                        o.getString("end_time").trim(),
+                                        o.getString("candidates").trim()
+
                                 );
 
+                                Log.d(TAG, "Candidates: " + o.getString("candidates").trim()
+                                );
                                 elections.add(item);
 
 
