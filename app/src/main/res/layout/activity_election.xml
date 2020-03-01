@@ -144,17 +144,18 @@
                 android:textSize="18sp" />
 
             <LinearLayout
+                android:id="@+id/candidate1Layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/vote_box"
+                android:elevation="10dp"
                 android:orientation="vertical"
                 android:padding="5dp"
-                android:elevation="10dp"
-                >
+                android:visibility="gone">
 
                 <TextView
-                    android:id="@+id/candidate1"
+                    android:id="@+id/candidateName1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Candidate 1" />
@@ -173,15 +174,16 @@
                         app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate1"
                         app:layout_constraintStart_toStartOf="parent"></ImageButton>
 
+                    <!--                        android:background="@drawable/round_progress_bar"-->
+
                     <ProgressBar
                         android:id="@+id/progressOfCandidate1"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="0dp"
-                        android:layout_height="20dp"
+                        android:layout_height="10dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_weight="10"
-                        android:background="@drawable/round_progress_bar"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/scoreOfCandidate1"
                         app:layout_constraintStart_toEndOf="@+id/voteCandidate1"
@@ -205,16 +207,18 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/candidate2Layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/vote_box"
-                android:orientation="vertical"
                 android:elevation="10dp"
-                android:padding="5dp">
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:visibility="gone">
 
                 <TextView
-                    android:id="@+id/candidate2"
+                    android:id="@+id/candidateName2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Candidate 2" />
@@ -234,15 +238,16 @@
                         app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate2"
                         app:layout_constraintStart_toStartOf="parent"></ImageButton>
 
+<!--                    android:background="@drawable/round_progress_bar"-->
+
                     <ProgressBar
                         android:id="@+id/progressOfCandidate2"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="0dp"
-                        android:layout_height="20dp"
+                        android:layout_height="10dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_weight="10"
-                        android:background="@drawable/round_progress_bar"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/scoreOfCandidate2"
                         app:layout_constraintStart_toEndOf="@+id/voteCandidate2"
@@ -265,20 +270,22 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/candidate3Layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/vote_box"
                 android:elevation="10dp"
-                android:orientation="vertical"
 
-                android:padding="5dp">
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:visibility="gone">
 
                 <TextView
-                    android:id="@+id/candidate3"
+                    android:id="@+id/candidateName3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Candidate 2" />
+                    android:text="Candidate 3" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -295,15 +302,16 @@
                         app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate3"
                         app:layout_constraintStart_toStartOf="parent"></ImageButton>
 
+<!--                    android:background="@drawable/round_progress_bar"-->
+
                     <ProgressBar
                         android:id="@+id/progressOfCandidate3"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="0dp"
-                        android:layout_height="20dp"
+                        android:layout_height="10dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_weight="10"
-                        android:background="@drawable/round_progress_bar"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/scoreOfCandidate3"
                         app:layout_constraintStart_toEndOf="@+id/voteCandidate3"
