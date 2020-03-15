@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -26,31 +28,20 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ElectionList extends AppCompatActivity {
+public class ElectionList extends AppCompatActivity{
 
     private static final String TAG = "ElectionList";
 
     private static final String URL = "https://blooming-sea-25214.herokuapp.com/get_election";
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-
     private List<Election> elections;
+    private ImageButton refreshButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.recycler_list);
-
-        recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        elections = new ArrayList<>();
-
-//        Getting actual data from server.
-        loadRecyclerViewData();
-
-        adapter = new Election_Adapter(elections, this);
-        recyclerView.setAdapter(adapter);
+        loadActivityData();
     }
 
     private void loadRecyclerViewData() {
@@ -109,5 +100,33 @@ public class ElectionList extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+    }
+
+    private void loadActivityData(){
+        setContentView(R.layout.recycler_list);
+
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        elections = new ArrayList<>();
+        refreshButton = findViewById(R.id.refreshBtn);
+
+        refreshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(ElectionList.this, "Button Clicked", Toast.LENGTH_SHORT).show();
+                if (view.getId() == R.id.refreshBtn) {
+                    //        Getting actual data from server.
+                    loadActivityData();
+                    Log.d(TAG, "onClick: Tring to get data from ");
+                }
+            }
+        });
+//        Getting actual data from server.
+        loadRecyclerViewData();
+        adapter = new Election_Adapter(elections, this);
+        recyclerView.setAdapter(adapter);
+
+
     }
 }

@@ -18,16 +18,16 @@
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
+            android:elevation="10dp"
             android:orientation="horizontal"
             android:padding="2dp"
-            android:weightSum="8"
-            android:elevation="10dp">
+            android:weightSum="8">
 
             <ImageView
                 android:id="@+id/electionPoster"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:layout_weight="2"
                 android:padding="2dp"
                 android:scaleType="centerCrop"

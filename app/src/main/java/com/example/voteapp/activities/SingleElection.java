@@ -119,25 +119,24 @@ public class SingleElection extends AppCompatActivity implements View.OnClickLis
                 if (i == 0) {
                     candidate1.setText(obj.getString("name"));
                     scoreOfCandidate_1.setText(obj.getString("voteCount"));
-                    progressBar1.setProgress(30);
+                    int progress = obj.getInt("voteCount");
+                    progressBar1.setProgress(progress);
                     progressBar1.setScaleY(4f);
                     layout1.setVisibility(View.VISIBLE);
                     CANDIDATE1_ID = obj.getString("_id");
                 } else if (i == 1) {
                     candidate2.setText(obj.getString("name"));
                     scoreOfCandidate_2.setText(obj.getString("voteCount"));
-//                    int progress = (obj.getInt("voteCount") / total) * 100;
-//                    progressBar2.setProgress(progress);
-                    progressBar2.setProgress(39);
+                    int progress = obj.getInt("voteCount");
+                    progressBar2.setProgress(progress);
                     progressBar2.setScaleY(4f);
                     layout2.setVisibility(View.VISIBLE);
                     CANDIDATE2_ID = obj.getString("_id");
                 } else if (i == 2) {
                     candidate3.setText(obj.getString("name"));
                     scoreOfCandidate_3.setText(obj.getString("voteCount"));
-//                    int progress = (obj.getInt("voteCount") / total) * 100;
-//                    progressBar3.setProgress(progress);
-                    progressBar3.setProgress(31);
+                    int progress = obj.getInt("voteCount");
+                    progressBar3.setProgress(progress);
                     progressBar3.setScaleY(4f);
                     layout3.setVisibility(View.VISIBLE);
                     CANDIDATE3_ID = obj.getString("_id");
@@ -158,10 +157,7 @@ public class SingleElection extends AppCompatActivity implements View.OnClickLis
                 currentValue = Integer.parseInt(scoreOfCandidate_1.getText().toString());
                 scoreOfCandidate_1.setText(Integer.toString(currentValue + 1));
                 progressBar1.incrementProgressBy(1);
-//                voteCandidateBtn2.setClickable(false);
-//                voteCandidateBtn2.setBackgroundDrawable(Drawable.createFromPath("@drawable/round_button_clicked"));
-//                voteCandidateBtn3.setClickable(false);
-//                voteCandidateBtn3.setBackgroundDrawable(Drawable.createFromPath("@drawable/round_button_clicked"));
+                disableAllButttons(voteCandidateBtn1, voteCandidateBtn2, voteCandidateBtn3);
                 REQUEST_URL += CANDIDATE1_ID;
                 break;
             case R.id.voteCandidate2:
@@ -169,10 +165,7 @@ public class SingleElection extends AppCompatActivity implements View.OnClickLis
                 currentValue = Integer.parseInt(scoreOfCandidate_2.getText().toString());
                 scoreOfCandidate_2.setText(Integer.toString(currentValue + 1));
                 progressBar2.incrementProgressBy(1);
-//                voteCandidateBtn1.setClickable(false);
-//                voteCandidateBtn1.setBackgroundDrawable(Drawable.createFromPath("@drawable/round_button_clicked"));
-//                voteCandidateBtn3.setClickable(false);
-//                voteCandidateBtn3.setBackgroundDrawable(Drawable.createFromPath("@drawable/round_button_clicked"));
+                disableAllButttons(voteCandidateBtn1, voteCandidateBtn2, voteCandidateBtn3);
                 REQUEST_URL += CANDIDATE2_ID;
                 break;
             case R.id.voteCandidate3:
@@ -180,10 +173,7 @@ public class SingleElection extends AppCompatActivity implements View.OnClickLis
                 currentValue = Integer.parseInt(scoreOfCandidate_3.getText().toString());
                 scoreOfCandidate_3.setText(Integer.toString(currentValue + 1));
                 progressBar3.incrementProgressBy(1);
-//                voteCandidateBtn2.setClickable(false);
-//                voteCandidateBtn2.setBackgroundDrawable(Drawable.createFromPath("@drawable/round_button_clicked"));
-//                voteCandidateBtn1.setClickable(false);
-//                voteCandidateBtn1.setBackgroundDrawable(Drawable.createFromPath("@drawable/round_button_clicked"));
+                disableAllButttons(voteCandidateBtn1, voteCandidateBtn2, voteCandidateBtn3);
                 REQUEST_URL += CANDIDATE3_ID;
                 break;
         }
@@ -210,5 +200,10 @@ public class SingleElection extends AppCompatActivity implements View.OnClickLis
         queue.add(stringRequest);
     }
 
+    public void disableAllButttons(ImageButton button1, ImageButton button2, ImageButton button3){
+        button1.setClickable(false);
+        button2.setClickable(false);
+        button3.setClickable(false);
+    }
 
 }
