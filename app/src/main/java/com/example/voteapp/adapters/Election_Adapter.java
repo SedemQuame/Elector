@@ -38,7 +38,6 @@ public class Election_Adapter extends RecyclerView.Adapter<Election_Adapter.View
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_item, parent, false);
-
         return new ViewHolder(v);
     }
 
@@ -64,6 +63,7 @@ public class Election_Adapter extends RecyclerView.Adapter<Election_Adapter.View
                 i.putExtra("start_time", election.getElectionStartDate());
                 i.putExtra("end_time", election.getElectionEndDate());
                 i.putExtra("candidates", election.getElectionCandidates());
+                i.putExtra("status", election.getElectionStatus());
                 i.setFlags(FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
             }

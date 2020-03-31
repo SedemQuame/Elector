@@ -126,6 +126,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ballot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -138,7 +139,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="7dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Candidate List"
+                android:text="@string/candidate_list"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#33393f"
                 android:textSize="18sp" />
@@ -146,194 +147,232 @@
             <LinearLayout
                 android:id="@+id/candidate1Layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/vote_box"
                 android:elevation="10dp"
                 android:orientation="vertical"
                 android:padding="5dp"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:weightSum="10"
+                tools:targetApi="lollipop">
 
-                <TextView
-                    android:id="@+id/candidateName1"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Candidate 1" />
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageButton
-                        android:id="@+id/voteCandidate1"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="2"
-                        android:background="@drawable/round_button"
-                        android:src="@drawable/ic_action_name"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate1"
-                        app:layout_constraintStart_toStartOf="parent"></ImageButton>
-
-                    <!--                        android:background="@drawable/round_progress_bar"-->
-
-                    <ProgressBar
-                        android:id="@+id/progressOfCandidate1"
-                        style="?android:attr/progressBarStyleHorizontal"
+                    <ImageView
+                        android:id="@+id/candidateImg1"
                         android:layout_width="0dp"
-                        android:layout_height="10dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_weight="10"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/scoreOfCandidate1"
-                        app:layout_constraintStart_toEndOf="@+id/voteCandidate1"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/scoreOfCandidate1"
-                        android:layout_width="60dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="643"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.45" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        android:layout_weight="2"
+                        android:scaleType="fitXY"
+                        tools:srcCompat="@tools:sample/avatars[5]" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/candidateName1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/candidate_1"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textSize="22sp" />
+
+                        <TextView
+                            android:id="@+id/scoreOfCandidate1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_thin"
+                            android:text="643"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.45" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/voteCandidate1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/round_button"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/ic_action_name"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate1"></ImageButton>
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/candidate2Layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/vote_box"
                 android:elevation="10dp"
                 android:orientation="vertical"
                 android:padding="5dp"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:weightSum="10">
 
-                <TextView
-                    android:id="@+id/candidateName2"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Candidate 2" />
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-
-                    <ImageButton
-                        android:id="@+id/voteCandidate2"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="2"
-                        android:background="@drawable/round_button"
-                        android:src="@drawable/ic_action_name"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate2"
-                        app:layout_constraintStart_toStartOf="parent"></ImageButton>
-
-<!--                    android:background="@drawable/round_progress_bar"-->
-
-                    <ProgressBar
-                        android:id="@+id/progressOfCandidate2"
-                        style="?android:attr/progressBarStyleHorizontal"
+                    <ImageView
+                        android:id="@+id/candidateImg2"
                         android:layout_width="0dp"
-                        android:layout_height="10dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_weight="10"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/scoreOfCandidate2"
-                        app:layout_constraintStart_toEndOf="@+id/voteCandidate2"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/scoreOfCandidate2"
-                        android:layout_width="60dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="410"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.49" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        android:layout_weight="2"
+                        android:contentDescription="@string/todo"
+                        android:scaleType="fitXY"
+                        tools:srcCompat="@tools:sample/avatars[10]" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/candidateName2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/candidate_2"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textSize="22sp" />
+
+                        <TextView
+                            android:id="@+id/scoreOfCandidate2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_thin"
+                            android:text="@string/_410"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.49" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/voteCandidate2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/round_button"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_action_name"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate2"
+                    app:layout_constraintStart_toStartOf="parent"></ImageButton>
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/candidate3Layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/vote_box"
                 android:elevation="10dp"
 
                 android:orientation="vertical"
                 android:padding="5dp"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:weightSum="10">
 
-                <TextView
-                    android:id="@+id/candidateName3"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Candidate 3" />
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-
-                    <ImageButton
-                        android:id="@+id/voteCandidate3"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="2"
-                        android:background="@drawable/round_button"
-                        android:src="@drawable/ic_action_name"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate3"
-                        app:layout_constraintStart_toStartOf="parent"></ImageButton>
-
-<!--                    android:background="@drawable/round_progress_bar"-->
-
-                    <ProgressBar
-                        android:id="@+id/progressOfCandidate3"
-                        style="?android:attr/progressBarStyleHorizontal"
+                    <ImageView
+                        android:id="@+id/candidateImg3"
                         android:layout_width="0dp"
-                        android:layout_height="10dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_weight="10"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/scoreOfCandidate3"
-                        app:layout_constraintStart_toEndOf="@+id/voteCandidate3"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/scoreOfCandidate3"
-                        android:layout_width="60dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="723"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.42000002" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        android:layout_weight="2"
+                        android:contentDescription="TODO"
+                        android:scaleType="fitXY"
+                        tools:srcCompat="@tools:sample/avatars[11]" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/candidateName3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/candidate_3"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textSize="22sp" />
+
+                        <TextView
+                            android:id="@+id/scoreOfCandidate3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_thin"
+                            android:text="@string/_723"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.42000002" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/voteCandidate3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/round_button"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_action_name"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate3"
+                    app:layout_constraintStart_toStartOf="parent"></ImageButton>
 
             </LinearLayout>
 
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/resultsPane"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
 
     </LinearLayout>
 </ScrollView>

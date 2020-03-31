@@ -8,9 +8,10 @@ public class Election {
     private String electionStartDate;
     private String electionEndDate;
     private String electionCandidates;
+    private String electionStatus;
 
 
-    public Election(String electionName, String electionDescription, String imageUrl, String electionId, String electionStartDate, String electionEndDate, String electionCandidates) {
+    public Election(String electionName, String electionDescription, String imageUrl, String electionId, String electionStartDate, String electionEndDate, String electionCandidates, String electionStatus) {
         this.electionName = electionName;
         this.electionDescription = electionDescription;
         this.imageUrl = imageUrl;
@@ -18,6 +19,7 @@ public class Election {
         this.electionStartDate = electionStartDate;
         this.electionEndDate = electionEndDate;
         this.electionCandidates = electionCandidates;
+        this.electionStatus = electionStatus;
     }
 
     public String getElectionName() {
@@ -46,5 +48,9 @@ public class Election {
 
     public String getElectionCandidates() {
         return electionCandidates;
+    }
+
+    public String getElectionStatus() {
+        return electionStatus;
     }
 }

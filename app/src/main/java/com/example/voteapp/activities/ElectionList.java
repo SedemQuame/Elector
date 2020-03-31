@@ -29,14 +29,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ElectionList extends AppCompatActivity{
-
     private static final String TAG = "ElectionList";
-
     private static final String URL = "https://blooming-sea-25214.herokuapp.com/get_election";
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private List<Election> elections;
-    private ImageButton refreshButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,8 +68,8 @@ public class ElectionList extends AppCompatActivity{
                                         o.getString("_id").trim(),
                                         o.getString("start_time").trim(),
                                         o.getString("end_time").trim(),
-                                        o.getString("candidates").trim()
-
+                                        o.getString("candidates").trim(),
+                                        o.getString("status")
                                 );
 
                                 Log.d(TAG, "Candidates: " + o.getString("candidates").trim()
@@ -109,7 +106,7 @@ public class ElectionList extends AppCompatActivity{
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         elections = new ArrayList<>();
-        refreshButton = findViewById(R.id.refreshBtn);
+        ImageButton refreshButton = findViewById(R.id.refreshBtn);
 
         refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,7 +115,7 @@ public class ElectionList extends AppCompatActivity{
                 if (view.getId() == R.id.refreshBtn) {
                     //        Getting actual data from server.
                     loadActivityData();
-                    Log.d(TAG, "onClick: Tring to get data from ");
+                    Log.d(TAG, "onClick: Trying to get data from ");
                 }
             }
         });
@@ -126,7 +123,5 @@ public class ElectionList extends AppCompatActivity{
         loadRecyclerViewData();
         adapter = new Election_Adapter(elections, this);
         recyclerView.setAdapter(adapter);
-
-
     }
 }
