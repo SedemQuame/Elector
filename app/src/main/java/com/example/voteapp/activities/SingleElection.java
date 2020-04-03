@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,9 +27,9 @@ import org.json.JSONObject;
 
 public class SingleElection extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "SingleElection";
+    private final String BASE_URL = "https://blooming-sea-25214.herokuapp.com/";
     private ImageButton voteCandidateBtn1, voteCandidateBtn2, voteCandidateBtn3;
     private String CANDIDATE1_ID, CANDIDATE2_ID, CANDIDATE3_ID;
-    private final String BASE_URL = "https://blooming-sea-25214.herokuapp.com/";
     private String REQUEST_URL = BASE_URL + "update_election?_id=";
 
     @Override
@@ -65,6 +66,7 @@ public class SingleElection extends AppCompatActivity implements View.OnClickLis
         ImageView candidateImg2 = findViewById(R.id.candidateImg2);
         ImageView candidateImg3 = findViewById(R.id.candidateImg3);
 
+
 //        Assigning values to the text view.
         TextView candidate1 = findViewById(R.id.candidateName1);
         TextView candidate2 = findViewById(R.id.candidateName2);
@@ -81,6 +83,11 @@ public class SingleElection extends AppCompatActivity implements View.OnClickLis
         LinearLayout layout1 = findViewById(R.id.candidate1Layout);
         LinearLayout layout2 = findViewById(R.id.candidate2Layout);
         LinearLayout layout3 = findViewById(R.id.candidate3Layout);
+
+//        Assigning references to the Buttons.
+        Button position1 = findViewById(R.id.tag1);
+        Button position2 = findViewById(R.id.tag2);
+        Button position3 = findViewById(R.id.tag3);
 
 
 //        Assigning values to the ImageButton
@@ -100,33 +107,59 @@ public class SingleElection extends AppCompatActivity implements View.OnClickLis
                 .load(electionPoster)
                 .into(electionPosterView);
 
+
         electionStartDateView.setText(electionStartTime);
         electionEndDateView.setText(electionEndTime);
 
 //        converting candidates string data to JSON Object
         try {
             JSONArray candidatesArr = new JSONArray(candidates);
+            int winnerAtIndex = -1, currentVoteCount, newHighVoteCount = 0;
+
             for (int i = 0; i < candidatesArr.length(); i++) {
                 JSONObject obj = candidatesArr.getJSONObject(i);
 
+                currentVoteCount = obj.getInt("voteCount");
+
+                if(currentVoteCount > newHighVoteCount){
+                    newHighVoteCount = currentVoteCount;
+                    winnerAtIndex = i;
+                }
+            }
+
+            for (int i = 0; i < candidatesArr.length(); i++) {
+                JSONObject obj = candidatesArr.getJSONObject(i);
+
+
                 if (i == 0) {
+                    if(winnerAtIndex == i){
+
+                    }
                     candidate1.setText(obj.getString("name"));
+
                     scoreOfCandidate_1.setText(String.format("Current vote count: %s", obj.getString("voteCount")));
                     Toast.makeText(this, (obj.getString("candidateImg")), Toast.LENGTH_SHORT).show();
                     Picasso.with(this)
                             .load(obj.getString("candidateImg"))
                             .into(candidateImg1);
-//                    layout1.setVisibility(View.VISIBLE);
+                    layout1.setVisibility(View.VISIBLE);
+
                     CANDIDATE1_ID = obj.getString("_id");
                 } else if (i == 1) {
+                    if(winnerAtIndex == i){
+
+                    }
                     candidate2.setText(obj.getString("name"));
                     scoreOfCandidate_2.setText(String.format("Current vote count: %s", obj.getString("voteCount")));
                     Picasso.with(this)
                             .load(obj.getString("candidateImg"))
                             .into(candidateImg2);
-//                    layout2.setVisibility(View.VISIBLE);
+                    layout2.setVisibility(View.VISIBLE);
                     CANDIDATE2_ID = obj.getString("_id");
                 } else if (i == 2) {
+                    if(winnerAtIndex == i){
+
+                    }
                     candidate3.setText(obj.getString("name"));
                     scoreOfCandidate_3.setText(String.format("Current vote count: %s", obj.getString("voteCount")));
                     Picasso.with(this)
@@ -142,11 +175,12 @@ public class SingleElection extends AppCompatActivity implements View.OnClickLis
 
 
         Log.d(TAG, "Election Status: " + electionStatus);
-        if(electionStatus.equals("Ended")){
-            disableAllButtons(voteCandidateBtn1, voteCandidateBtn2, voteCandidateBtn3);
-//            findViewById(R.id.ballot).setVisibility(View.GONE);
+        if (electionStatus.equals("Ended")) {
+            hideAllButtons(voteCandidateBtn1, voteCandidateBtn2, voteCandidateBtn3);
+            position1.setVisibility(View.VISIBLE);
+            position2.setVisibility(View.VISIBLE);
+            position3.setVisibility(View.VISIBLE);
         }
-
     }
 
     @Override
@@ -188,10 +222,16 @@ public class SingleElection extends AppCompatActivity implements View.OnClickLis
         queue.add(stringRequest);
     }
 
-    public void disableAllButtons(ImageButton button1, ImageButton button2, ImageButton button3){
+    public void disableAllButtons(ImageButton button1, ImageButton button2, ImageButton button3) {
         button1.setClickable(false);
         button2.setClickable(false);
         button3.setClickable(false);
+    }
+
+    public void hideAllButtons(ImageButton button1, ImageButton button2, ImageButton button3) {
+        button1.setVisibility(View.GONE);
+        button2.setVisibility(View.GONE);
+        button3.setVisibility(View.GONE);
     }
 
 }

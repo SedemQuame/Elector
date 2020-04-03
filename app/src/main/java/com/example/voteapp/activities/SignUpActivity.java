@@ -29,11 +29,11 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        editName = (EditText)findViewById(R.id.editName);
-        editEmail = (EditText)findViewById(R.id.editEmail);
-        editPassword = (EditText)findViewById(R.id.editPassword);
+        editName = findViewById(R.id.editName);
+        editEmail = findViewById(R.id.editEmail);
+        editPassword = findViewById(R.id.editPassword);
 
-        findViewById(R.id.textView3).setOnClickListener(this);
+        findViewById(R.id.secondRunnerUpVoteCount).setOnClickListener(this);
         findViewById(R.id.btnRegister).setOnClickListener(this);
 
         // Initialize Firebase Auth
@@ -93,7 +93,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.textView3:
+            case R.id.secondRunnerUpVoteCount:
                 startActivity(new Intent(this, LoginActivity.class));
                 break;
             case R.id.btnRegister:

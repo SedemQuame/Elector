@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <LinearLayout
@@ -11,12 +11,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:background="#FFFFFF"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/electionPoster"
             android:layout_width="match_parent"
             android:layout_height="260dp"
+            android:contentDescription="@string/todo"
             android:scaleType="fitXY"
             tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
@@ -28,7 +30,7 @@
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/roboto_medium"
-            android:text="Title"
+            android:text="@string/title"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#33393f"
             android:textSize="18sp" />
@@ -41,14 +43,14 @@
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="15dp"
             android:fontFamily="@font/montserrat"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            android:text="@string/lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_sed_do_eiusmod_tempor_incididunt_ut_labore_et_dolore_magna_aliqua_ut_enim_ad_minim_veniam_quis_nostrud_exercitation_ullamco_laboris_nisi_ut_aliquip_ex_ea_commodo_consequat_duis_aute_irure_dolor_in_reprehenderit_in_voluptate_velit_esse_cillum_dolore_eu_fugiat_nulla_pariatur_excepteur_sint_occaecat_cupidatat_non_proident_sunt_in_culpa_qui_officia_deserunt_mollit_anim_id_est_laborum"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="#7f8c8d"
-            android:textSize="14sp" />
+            android:textSize="14sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
             android:orientation="horizontal"
             android:weightSum="7">
@@ -60,7 +62,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
-                android:text="Starts:"
+                android:text="@string/starts"
                 android:textColor="#33393f"
                 android:textStyle="bold" />
 
@@ -86,7 +88,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
-                android:text="Ends:"
+                android:text="@string/ends"
                 android:textColor="#33393f"
                 android:textStyle="bold" />
 
@@ -113,7 +115,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
-                android:text="Status:"
+                android:text="@string/status"
                 android:textColor="#33393f"
                 android:textStyle="bold" />
 
@@ -122,7 +124,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="6"
-                android:text="Ongoing" />
+                android:text="@string/ongoing" />
         </LinearLayout>
 
         <LinearLayout
@@ -131,7 +133,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="match_parent"
@@ -153,8 +156,7 @@
                 android:elevation="10dp"
                 android:orientation="vertical"
                 android:padding="5dp"
-                android:visibility="gone"
-                android:weightSum="10"
+                android:visibility="visible"
                 tools:targetApi="lollipop">
 
                 <LinearLayout
@@ -162,28 +164,31 @@
                     android:layout_height="70dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="10">
 
                     <ImageView
                         android:id="@+id/candidateImg1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
+                        android:contentDescription="@string/todo"
                         android:scaleType="fitXY"
                         tools:srcCompat="@tools:sample/avatars[5]" />
 
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="8"
+                        android:layout_height="match_parent"
+                        android:layout_weight="6"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/candidateName1"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_medium"
                             android:text="@string/candidate_1"
+                            android:textAlignment="textStart"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small"
                             android:textSize="22sp" />
 
@@ -192,8 +197,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_thin"
-                            android:text="643"
-                            android:textAlignment="center"
+                            android:text="@string/_643"
+                            android:textAlignment="textStart"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textSize="14sp"
                             android:textStyle="bold"
@@ -201,8 +206,27 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.45" />
-
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/tag1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:background="@drawable/custom_button"
+                            android:text="1st position"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp"
+                            android:visibility="visible"
+                            tools:visibility="visible" />
+                    </LinearLayout>
+
+
                 </LinearLayout>
 
                 <ImageButton
@@ -211,9 +235,9 @@
                     android:layout_height="0dp"
                     android:layout_weight="2"
                     android:background="@drawable/round_button"
-                    android:contentDescription="TODO"
+                    android:contentDescription="@string/todo"
                     android:src="@drawable/ic_action_name"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate1"></ImageButton>
+                    app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate1" />
 
             </LinearLayout>
 
@@ -226,15 +250,16 @@
                 android:elevation="10dp"
                 android:orientation="vertical"
                 android:padding="5dp"
-                android:visibility="gone"
-                android:weightSum="10">
+                android:visibility="visible"
+                tools:targetApi="lollipop">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="10">
 
                     <ImageView
                         android:id="@+id/candidateImg2"
@@ -248,25 +273,26 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="8"
+                        android:layout_weight="6"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/candidateName2"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_medium"
                             android:text="@string/candidate_2"
+                            android:textAlignment="textStart"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small"
                             android:textSize="22sp" />
 
                         <TextView
                             android:id="@+id/scoreOfCandidate2"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_thin"
                             android:text="@string/_410"
-                            android:textAlignment="center"
+                            android:textAlignment="textStart"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -275,6 +301,17 @@
                             app:layout_constraintVertical_bias="0.49" />
 
                     </LinearLayout>
+
+                    <Button
+                        android:id="@+id/tag2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/custom_button"
+                        android:text="2nd position"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp"
+                        android:visibility="visible" />
 
                 </LinearLayout>
 
@@ -287,7 +324,7 @@
                     android:contentDescription="@string/todo"
                     android:src="@drawable/ic_action_name"
                     app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate2"
-                    app:layout_constraintStart_toStartOf="parent"></ImageButton>
+                    app:layout_constraintStart_toStartOf="parent" />
 
             </LinearLayout>
 
@@ -297,51 +334,50 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/vote_box"
-                android:elevation="10dp"
-
                 android:orientation="vertical"
                 android:padding="5dp"
-                android:visibility="gone"
-                android:weightSum="10">
+                android:visibility="visible">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="10">
 
                     <ImageView
                         android:id="@+id/candidateImg3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:contentDescription="TODO"
+                        android:contentDescription="@string/todo"
                         android:scaleType="fitXY"
                         tools:srcCompat="@tools:sample/avatars[11]" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="8"
+                        android:layout_weight="6"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/candidateName3"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_medium"
                             android:text="@string/candidate_3"
+                            android:textAlignment="textStart"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small"
                             android:textSize="22sp" />
 
                         <TextView
                             android:id="@+id/scoreOfCandidate3"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_thin"
                             android:text="@string/_723"
-                            android:textAlignment="center"
+                            android:textAlignment="textStart"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -350,6 +386,17 @@
                             app:layout_constraintVertical_bias="0.42000002" />
 
                     </LinearLayout>
+
+                    <Button
+                        android:id="@+id/tag3"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/custom_button"
+                        android:text="3rd position"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp"
+                        android:visibility="visible" />
 
                 </LinearLayout>
 
@@ -362,17 +409,11 @@
                     android:contentDescription="@string/todo"
                     android:src="@drawable/ic_action_name"
                     app:layout_constraintBaseline_toBaselineOf="@+id/progressOfCandidate3"
-                    app:layout_constraintStart_toStartOf="parent"></ImageButton>
+                    app:layout_constraintStart_toStartOf="parent" />
 
             </LinearLayout>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/resultsPane"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"></LinearLayout>
 
     </LinearLayout>
 </ScrollView>
